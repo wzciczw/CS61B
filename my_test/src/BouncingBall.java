@@ -15,7 +15,7 @@ public class BouncingBall {
         // set the scale of the coordinate system
         StdDraw.setXscale(-1.0, 1.0);
         StdDraw.setYscale(-1.0, 1.0);
-        StdDraw.enableDoubleBuffering();
+        //StdDraw.enableDoubleBuffering();
 
         // initial values
         double rx = 0.480, ry = 0.860;     // position
