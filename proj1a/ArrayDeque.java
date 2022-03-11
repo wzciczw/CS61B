@@ -67,7 +67,7 @@ public class ArrayDeque<T> {
         if (isEmpty()){
             return null;
         }
-        if(size/(double)items.length<0.25){
+        if(size/(double)items.length<0.25&&size>=16){
             resize(items.length/4+1);
         }
         back=(back+items.length-1)%items.length;
@@ -79,7 +79,7 @@ public class ArrayDeque<T> {
         if (isEmpty()){
             return null;
         }
-        if (size/(double)items.length<0.25){
+        if (size/(double)items.length<0.25&&size>=16){
             resize(items.length/4+1);
         }
         front =(front+1)%items.length;
@@ -92,7 +92,7 @@ public class ArrayDeque<T> {
             return null;
         }
         int k = (front+1)%items.length;
-        int count=1;
+        int count=0;
         for (; count<i; count++)
             k= (k+1)%items.length;
         return items[k];
@@ -101,6 +101,6 @@ public class ArrayDeque<T> {
     public int size() {
         return size;
     }
-    
+
 }
 

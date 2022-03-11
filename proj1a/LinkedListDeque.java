@@ -1,9 +1,9 @@
 public class LinkedListDeque<T> {
-    public int size;
-    public Node sentinel;
+    private int size;
+    private Node sentinel;
 
     //链表里的节点对象
-    public class Node{
+    private class Node{
         public T item;
         public Node previous;
         public Node next;
@@ -111,7 +111,7 @@ public class LinkedListDeque<T> {
         }
     }
 
-    public T getRecursivehelp(Node p,int index){
+    private T getRecursivehelp(Node p,int index){
         if(isEmpty()){
             return null;
         }
