@@ -2,6 +2,7 @@ public class LinkedListDeque<T> {
     public int size;
     public Node sentinel;
 
+    //链表里的节点对象
     public class Node{
         public T item;
         public Node previous;
@@ -19,10 +20,12 @@ public class LinkedListDeque<T> {
         }
     }
 
+    //返回链表总元素个数
     public int size(){
         return size;
     }
 
+    //初始化，链表的真实首节点未知
     public LinkedListDeque(){
         sentinel=new Node(null,null);
         sentinel.previous=sentinel;
@@ -39,7 +42,9 @@ public class LinkedListDeque<T> {
     }
 
     public void addLast(T item){
+        //建立新联系
         sentinel.previous=new Node(item,sentinel.previous,sentinel);
+        //切断老联系
         sentinel.previous.previous.next=sentinel.previous;
         size+=1;
     }
@@ -107,6 +112,9 @@ public class LinkedListDeque<T> {
     }
 
     public T getRecursivehelp(Node p,int index){
+        if(isEmpty()){
+            return null;
+        }
         if(index==0){
             return p.item;
         } else{
