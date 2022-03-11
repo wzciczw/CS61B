@@ -89,13 +89,11 @@ public class LinkedListDeque<T> {
         return i;
     }
 
+    //i=0表示第一个
     public T get(int index){
         if(!isEmpty()&&index<=size){
             Node p=sentinel;
-            if(index==0){
-                return p.previous.item;
-            }
-            for(int i=0;i<index;i++){
+            for(int i=0;i<=index;i++){
                 p=p.next;
             }
             return p.item;
@@ -104,11 +102,7 @@ public class LinkedListDeque<T> {
     }
 
     public T getRecursive(int index){
-        if(index==0){
-            return sentinel.previous.item;
-        } else{
-            return GetRecursiveHelp(sentinel,index);
-        }
+        return GetRecursiveHelp(sentinel.next,index);
     }
 
     private T GetRecursiveHelp(Node p,int index){

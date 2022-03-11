@@ -84,6 +84,7 @@ public class ArrayDeque<T> {
         return items[front];
     }
 
+    //i=0表示第一个
     public T get(int i) {
         if (isEmpty()){
             return null;
