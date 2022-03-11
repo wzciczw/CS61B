@@ -13,10 +13,7 @@ public class ArrayDeque<T> {
     }
 
     public  boolean isEmpty(){
-        if(size==0){
-            return true;
-        }
-        return false;
+        return size==0;
     }
 
     //when size=items.length, back=front+1
@@ -67,7 +64,7 @@ public class ArrayDeque<T> {
         if (isEmpty()){
             return null;
         }
-        if(size/(double)items.length<0.25&&size>=16){
+        if(size/(double)items.length<0.25&&items.length>=16){
             resize(items.length/4+1);
         }
         back=(back+items.length-1)%items.length;
@@ -79,7 +76,7 @@ public class ArrayDeque<T> {
         if (isEmpty()){
             return null;
         }
-        if (size/(double)items.length<0.25&&size>=16){
+        if (size/(double)items.length<0.25&&items.length>=16){
             resize(items.length/4+1);
         }
         front =(front+1)%items.length;

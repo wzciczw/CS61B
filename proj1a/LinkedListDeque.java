@@ -72,9 +72,9 @@ public class LinkedListDeque<T> {
             return null;
         }
         T i=sentinel.next.item;
-        sentinel.next.next=sentinel.next.next.next;
-        sentinel.next.next.previous=sentinel.next;
-        size-=1;
+        sentinel.next=sentinel.next.next;
+        sentinel.next.previous=sentinel;
+        size--;
         return i;
     }
 
@@ -82,10 +82,10 @@ public class LinkedListDeque<T> {
         if (isEmpty()){
             return null;
         }
-        T i=sentinel.next.previous.item;
-        sentinel.next.previous=sentinel.next.previous.previous;
-        sentinel.next.previous.next=sentinel.next;
-        size-=1;
+        T i=sentinel.previous.item;
+        sentinel.previous=sentinel.previous.previous;
+        sentinel.previous.next=sentinel;
+        size--;
         return i;
     }
 
@@ -107,18 +107,18 @@ public class LinkedListDeque<T> {
         if(index==0){
             return sentinel.previous.item;
         } else{
-            return getRecursivehelp(sentinel,index);
+            return GetRecursiveHelp(sentinel,index);
         }
     }
 
-    private T getRecursivehelp(Node p,int index){
+    private T GetRecursiveHelp(Node p,int index){
         if(isEmpty()){
             return null;
         }
         if(index==0){
             return p.item;
         } else{
-            return getRecursivehelp(p.next,index-1);
+            return GetRecursiveHelp(p.next,index-1);
         }
 
     }
