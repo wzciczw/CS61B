@@ -101,18 +101,6 @@ public class ArrayDeque<T> {
     public int size() {
         return size;
     }
-
-    public static void main(String args[]){
-        ArrayDeque<String> aq=new ArrayDeque<String>();
-        aq.addFirst("a");
-        aq.addFirst("b");
-        aq.addLast("c");
-        System.out.print(aq.get(2));
-        aq.removeLast();
-        aq.removeLast();
-        aq.printDeque();
-
-    }
-
+    
 }
 

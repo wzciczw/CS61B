@@ -123,13 +123,4 @@ public class LinkedListDeque<T> {
 
     }
 
-    public static void main(String args[]){
-        LinkedListDeque<String> dq=new LinkedListDeque<>();
-        dq.addFirst("B");
-        dq.addFirst("A");
-        dq.addLast("C");
-        dq.printDeque();
-        System.out.println(dq.getRecursive(0));
-        System.out.println(dq.getRecursive(3));
-    }
 }
